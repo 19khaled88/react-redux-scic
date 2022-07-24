@@ -3,6 +3,6 @@
 
 This project is built with [React-Redux](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Available Technologies and Libraries
 
 

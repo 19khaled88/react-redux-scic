@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 // import { setupListeners } from '@reduxjs/toolkit/query'
 import App from './App';
+import cartReducer, { cartItemValueTotal } from './features/cartSlice';
 import { productsApi } from './features/productsApi';
 import productReducer, { productFetch } from './features/productSlice';
 // import productReducer, { productFetch } from './features/productSlice';
@@ -12,6 +13,7 @@ import './index.css';
 const store = configureStore({
   reducer:{
     products:productReducer,
+    cart:cartReducer,
     [productsApi.reducerPath]:productsApi.reducer,
   },
   middleware:(getDefaultMiddleware)=>
@@ -21,7 +23,7 @@ const store = configureStore({
 
 
 store.dispatch(productFetch())
-
+store.dispatch(cartItemValueTotal())
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 // import { setupListeners } from '@reduxjs/toolkit/query'
 import App from './App'
+import authReducer, { loadUser } from './features/authSlice'
 import cartReducer, { cartItemValueTotal } from './features/cartSlice'
-import authReducer from './features/authSlice'
 import { productsApi } from './features/productsApi'
 import productReducer, { productFetch } from './features/productSlice'
 // import productReducer, { productFetch } from './features/productSlice';
@@ -24,7 +24,7 @@ const store = configureStore({
 
 store.dispatch(productFetch())
 store.dispatch(cartItemValueTotal())
-
+store.dispatch(loadUser(null))
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>

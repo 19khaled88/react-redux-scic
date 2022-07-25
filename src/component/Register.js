@@ -1,17 +1,23 @@
 import React, { useState } from 'react'
-import Form from 'react-bootstrap/Form'
-import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { registerUser } from '../features/authSlice'
 const Register = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const dispatch = useDispatch()
+  const auth = useSelector((state)=>state.auth)
   function validateForm() {
     return email.length > 0 && password.length > 0
   }
   function handlerSubmit(event) {
     event.preventDefault()
+    dispatch(registerUser({name:name,email:email,password:password}))
   }
+  
   return (
     <div className="register-form">
       <span
@@ -64,6 +70,18 @@ const Register = () => {
         >
           Register
         </Button>
+        {auth.registerStatus === 'rejected' ? <p 
+          style={{  
+            backgroundColor:'#EB1D36',
+            borderRadius:'5px',
+            paddingTop:'5px',
+            paddingBottom:'5px',
+            marginTop:'5px',
+            paddingLeft:'4px',
+            paddingRight:'4px',
+            color:'#E2DCC8',
+          }}
+        >{auth.registerError}</p> : null}
       </Form>
       <span
         style={{

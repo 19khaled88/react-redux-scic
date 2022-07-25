@@ -11,6 +11,8 @@ const Home = () => {
     isSuccess,
   } = useGetAllProductsQuery()
   const cart = useSelector((state) => state.cart)
+  // const auth =useSelector((state)=>state.auth)
+  
   useEffect(() => {
     dispatch(cartItemValueTotal())
   }, [cart])
@@ -26,7 +28,7 @@ const Home = () => {
         <p>An error occured...</p>
       ) : (
         <>
-          <h2>New Arriavals</h2>
+          <h2>Iphone Collections</h2>
           <div className="products">
             {data?.map((product) => (
               <div key={product.id} className="product">

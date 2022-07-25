@@ -1,9 +1,21 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { logoutUser } from '../features/authSlice'
 const Navbar = () => {
   const cart = useSelector((state) => state.cart)
+  const auth = useSelector((state) => state.auth)
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+  // useEffect(() => {
+  //  if(auth._id){
+  //   navigate('/cart')
+  //  }
+  // }, [navigate,auth._id]);
 
+  const logoutHandler=()=>{
+    dispatch(logoutUser(null))
+  }
   return (
     <nav className="nav-bar">
       <Link to="/">
@@ -27,7 +39,12 @@ const Navbar = () => {
             </span>
           </div>
         </Link>
-        <Link to="/register">Register</Link>
+        {
+          auth.token ? 
+          <button onClick={()=>logoutHandler()}>Logout</button> :
+          <Link to="/register">Register</Link>
+        }
+        
       </div>
     </nav>
   )

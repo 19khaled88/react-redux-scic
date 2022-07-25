@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { Link } from 'react-router-dom'
-import Button from 'react-bootstrap/Button'
 const Login = () => {
-  const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   function validateForm() {
@@ -11,6 +10,7 @@ const Login = () => {
   }
   function handlerSubmit(event) {
     event.preventDefault()
+   
   }
   return (
     <div className="login-form">

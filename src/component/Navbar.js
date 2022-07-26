@@ -1,25 +1,31 @@
-import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
-import { logoutUser } from '../features/authSlice'
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import { logoutUser } from '../features/authSlice';
 const Navbar = () => {
   const cart = useSelector((state) => state.cart)
   const auth = useSelector((state) => state.auth)
   const navigate = useNavigate()
   const dispatch = useDispatch()
   // useEffect(() => {
-  //  if(auth._id){
+  //  if(auth.token){
   //   navigate('/cart')
   //  }
-  // }, [navigate,auth._id]);
+  // }, [navigate,auth.token]);
 
   const logoutHandler=()=>{
     dispatch(logoutUser(null))
-  }
+    toast.warning('Logged out successfully',{
+      position:'top-right'
+    })
+    navigate('/login')
+   }
+ 
   return (
     <nav className="nav-bar">
       <Link to="/">
-        <h2>Shop Online</h2>
+        <h2>Shop Line</h2>
       </Link>
       <div className="right-corner flex-gap">
         <Link to="/cart">
@@ -44,7 +50,6 @@ const Navbar = () => {
           <button onClick={()=>logoutHandler()}>Logout</button> :
           <Link to="/register">Register</Link>
         }
-        
       </div>
     </nav>
   )

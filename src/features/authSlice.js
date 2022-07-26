@@ -33,6 +33,23 @@ export const registerUser = createAsyncThunk(
     }
   }
   )
+export const loginUser = createAsyncThunk(
+  'auth/loginUser',
+  async (values, {rejectWithValue})=>{
+    try {
+     const token =await  axios.post(`${url}/login`,{
+        email:values.email,
+        password:values.password
+      })
+      localStorage.setItem('token',token.data)
+      return token.data
+    } catch (error) {
+     
+      return rejectWithValue(error.response.data)
+
+    }
+  }
+  )
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -64,9 +81,24 @@ const authSlice = createSlice({
         loginError: '',
         userLoaded: false,
       }
+    },
+    login(state,action){
+    const token = state.token
+    if(token){
+      const user = jwtDecode(token)
+      return{
+        ...state,
+        token:action.payload,
+        name:user.name,
+        email:user.email,
+        _id:user._id,
+        userLoaded:true
+      }
+    }
     }
   },
   extraReducers:(builder)=> {
+
     builder.addCase(registerUser.pending, (state,action)=>{
       return {...state, registerStatus:'pending'}
     })
@@ -79,7 +111,8 @@ const authSlice = createSlice({
           name:user.name,
           email:user.email,
           _id:user._id,
-          registerStatus:'success'
+          registerStatus:'success',
+          registerError:""
         }
       }else return state
       
@@ -92,8 +125,35 @@ const authSlice = createSlice({
         registerError:action.payload
       }
     })
+
+    builder.addCase(loginUser.pending, (state,action)=>{
+      return {...state, loginStatus:'pending'}
+    })
+    builder.addCase(loginUser.fulfilled, (state,action)=>{
+      if(action.payload){
+        const user = jwtDecode(action.payload)
+        return {
+          ...state,
+          token:action.payload,
+          name:user.name,
+          email:user.email,
+          _id:user._id,
+          loginStatus:'success',
+          loginError:""
+        }
+      }else return state
+      
+    })
+    builder.addCase(loginUser.rejected, (state,action)=>{
+     
+      return{
+        ...state,
+        loginStatus:'rejected',
+        loginError:action.payload
+      }
+    })
   },
 })
 
-export const {loadUser,logoutUser} = authSlice.actions
+export const {loadUser,logoutUser,login} = authSlice.actions
 export default authSlice.reducer

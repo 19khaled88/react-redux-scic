@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import { Link } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useLocation } from 'react-router-dom'
+import { loginUser } from '../features/authSlice'
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const location = useLocation()
+  const auth = useSelector(state=>state.auth)
+  const dispatch = useDispatch()
   function validateForm() {
     return email.length > 0 && password.length > 0
   }
   function handlerSubmit(event) {
     event.preventDefault()
-   
+   dispatch(loginUser({email:email,password:password}))
+   console.log(location)
   }
   return (
     <div className="login-form">
@@ -55,6 +61,18 @@ const Login = () => {
         >
           Login
         </Button>
+        {auth.loginStatus === 'rejected' ? <p 
+        style={{  
+          backgroundColor:'#EB1D36',
+          borderRadius:'5px',
+          paddingTop:'5px',
+          paddingBottom:'5px',
+          marginTop:'5px',
+          paddingLeft:'4px',
+          paddingRight:'4px',
+          color:'#E2DCC8',
+        }}
+      >{auth.loginError}</p> : null}
       </Form>
       <span
         style={{

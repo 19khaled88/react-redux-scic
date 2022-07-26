@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { cartItemValueTotal, clearCart, decreaseCartItemNumbers, increaseCartItemNumbers, removeCartItem } from '../features/cartSlice';
 const Cart = () => {
   const cart = useSelector((state)=>state.cart)
+  const auth = useSelector((state)=>state.auth)
+  const navigate = useNavigate()
   const dispatch= useDispatch()
   useEffect(()=>{
     dispatch(cartItemValueTotal())
@@ -21,8 +23,11 @@ const Cart = () => {
   const clearCarthandle=()=>{
     dispatch(clearCart())
   }
-  const checkoutTest=()=>{
+  const checkoutSuccess=()=>{
     
+  }
+  const checkoutLogin=()=>{
+    navigate('/login')
   }
   return (
     <div className='cart-container'>
@@ -81,7 +86,11 @@ const Cart = () => {
                 <span className='amount'>${cart.cartTotalAmount}</span>
               </div>
               <p>Taxes and shipping calculated at checkout</p>
-              <button onClick={()=>checkoutTest()}>Check out</button>
+              {
+                auth._id ? 
+                <button onClick={()=>checkoutSuccess()}>Check out</button> : 
+                <button className='checkoutLogin' onClick={()=>checkoutLogin()}>Check out</button>
+              }
               <div className='start-shopping'>
                   <Link to="/">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left" viewBox="0 0 16 16">

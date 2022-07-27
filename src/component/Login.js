@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { loginUser } from '../features/authSlice'
 const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const location = useLocation()
+  const navigate = useNavigate()
   const auth = useSelector(state=>state.auth)
   const dispatch = useDispatch()
   function validateForm() {
@@ -16,7 +17,7 @@ const Login = () => {
   function handlerSubmit(event) {
     event.preventDefault()
    dispatch(loginUser({email:email,password:password}))
-   console.log(location)
+   navigate('/dashboard')
   }
   return (
     <div className="login-form">

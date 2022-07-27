@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, cartItemValueTotal } from '../features/cartSlice'
 import { useGetAllProductsQuery } from '../features/productsApi'
+import BannerSliide from './BannerSliide'
 const Home = () => {
   const {
     data,
@@ -28,6 +29,7 @@ const Home = () => {
         <p>An error occured...</p>
       ) : (
         <>
+          <BannerSliide />
           <h2>Iphone Collections</h2>
           <div className="products">
             {data?.map((product) => (

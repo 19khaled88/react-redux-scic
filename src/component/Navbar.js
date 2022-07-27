@@ -46,9 +46,15 @@ const Navbar = () => {
           </div>
         </Link>
         {
-          auth.token ? 
-          <button onClick={()=>logoutHandler()}>Logout</button> :
-          <Link to="/register">Register</Link>
+          auth.token  ? <Link to='/dashboard'>Dashboard</Link> :''
+        }
+        
+        {
+          auth.token ?
+         
+          <button onClick={()=>logoutHandler()}> <i class="fa fa-sign-out" aria-hidden="true"></i>Logout</button>  :
+         <Link to="/register"><i class="fa fa-user-plus" aria-hidden="true"></i>Register</Link>
+          
         }
       </div>
     </nav>

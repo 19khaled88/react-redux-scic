@@ -12,6 +12,7 @@ const initialState = {
   registerError: '',
   loginStatus: '',
   loginError: '',
+  isAdmin:'',
   userLoaded: false,
 }
 
@@ -60,13 +61,17 @@ const authSlice = createSlice({
         const user = jwtDecode(token)
         return{
           ...state,
-          token:action.payload,
+          token:token,
+          // token:action.payload,
           name:user.name,
           email:user.email,
+          loginStatus: true,
           _id:user._id,
+          isAdmin:user.isAdmin,
           userLoaded:true
         }
       }
+     
     },
     logoutUser(state,action){
       localStorage.removeItem('token')
@@ -92,6 +97,7 @@ const authSlice = createSlice({
         name:user.name,
         email:user.email,
         _id:user._id,
+        isAdmin:user.isAdmin,
         userLoaded:true
       }
     }
@@ -138,6 +144,7 @@ const authSlice = createSlice({
           name:user.name,
           email:user.email,
           _id:user._id,
+          isAdmin:user.isAdmin,
           loginStatus:'success',
           loginError:""
         }
@@ -149,6 +156,7 @@ const authSlice = createSlice({
       return{
         ...state,
         loginStatus:'rejected',
+        // isAdmin:false,
         loginError:action.payload
       }
     })

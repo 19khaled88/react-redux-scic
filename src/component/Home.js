@@ -2,7 +2,10 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addToCart, cartItemValueTotal } from '../features/cartSlice'
 import { useGetAllProductsQuery } from '../features/productsApi'
-import BannerSliide from './BannerSliide'
+import Slider from './Slider'
+// import Banner from './Banner'
+// import BannerSlide from './BannerSlide'
+
 const Home = () => {
   const {
     data,
@@ -29,12 +32,13 @@ const Home = () => {
         <p>An error occured...</p>
       ) : (
         <>
-          <BannerSliide />
-          <h2>Iphone Collections</h2>
+          {/*<BannerSlide />*/}
+         <Slider />
+          <h2 style={{paddingTop:'30px'}}>Most Desirables</h2>
           <div className="products">
             {data?.map((product) => (
               <div key={product.id} className="product">
-                <h3>{product.name}</h3>
+                {/*<h3>{product.name}</h3>*/}
                 <img
                   style={{ width: '100%', height: '210px' }}
                   src={product.image}

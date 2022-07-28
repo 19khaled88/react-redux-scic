@@ -24,7 +24,7 @@ const Sidebar = ({sidebarOpen, closeSideOpen}) => {
         </div>
         
 
-        <h2 className={auth && auth.isAdmin === true ? 'adminTitile' : 'noAdminTitle disabled'}><i class="fa fa-arrow-right" aria-hidden="true" style={{paddingRight:'5px'}}></i>Admin</h2>
+        <h2 className={auth && auth.isAdmin === true ? 'adminTitile' : 'noAdminTitle disabled'}><i className="fa fa-arrow-right" aria-hidden="true" style={{paddingRight:'5px'}}></i>Admin</h2>
         {/*<h2>Admin</h2>*/}
         <div className='sidebar_link'>
           <i className='fa fa-group'></i>
@@ -35,13 +35,13 @@ const Sidebar = ({sidebarOpen, closeSideOpen}) => {
         <div className='sidebar_link'>
             <i className='fa fa-product-hunt'></i>
             {
-            auth && auth.isAdmin === true ? <Link to='pManagement'>Product Management</Link> : <Link className='noAdminTitle' to='pManagement'>Product Management</Link>
+            auth && auth.isAdmin === true ? <Link to='pManagement'>Product Management</Link> : <Link className='noAdminTitle' to='#'>Product Management</Link>
             }
             </div>
         <div className='sidebar_link'>
             <i className='fa fa-first-order' aria-hidden='true'></i>
             {
-              auth && auth.isAdmin === true ?  <Link to="oManagement">Order Management</Link> :  <Link className='noAdminTitle' to="oManagement">Order Management</Link>
+              auth && auth.isAdmin === true ?  <Link to="oManagement">Order Management</Link> :  <Link className='noAdminTitle' to="#">Order Management</Link>
             }
         </div>
         <div className='sidebar_link'>
@@ -59,7 +59,7 @@ const Sidebar = ({sidebarOpen, closeSideOpen}) => {
         </div>
 
        
-        <h2><i class="fa fa-arrow-right" aria-hidden="true" style={{paddingRight:'5px'}}></i>User</h2>
+        <h2><i className="fa fa-arrow-right" aria-hidden="true" style={{paddingRight:'5px'}}></i>User</h2>
         <div className='sidebar_link'>
             <i className='fa fa-user'></i>
             <a href='#'>User</a>
@@ -72,7 +72,7 @@ const Sidebar = ({sidebarOpen, closeSideOpen}) => {
             <i className='fa fa-calendar-check-o'></i>
             <a href='#'>Store Management</a>
         </div>
-        <h2><i class="fa fa-arrow-right" aria-hidden="true" style={{paddingRight:'5px'}}></i>Logout</h2>
+        <h2><i className="fa fa-arrow-right" aria-hidden="true" style={{paddingRight:'5px'}}></i>Logout</h2>
         <div className='sidebar_link '>
             <i className='fa fa-power-off'></i>
             <a href='#'>Logout</a>

@@ -15,10 +15,10 @@ const Navbar = ({sidebarOpen, openSidebar}) => {
      </div>
      <div className='navbar_right'>
         <a href='#'>
-        <i class="fa fa-search" aria-hidden="true"></i>
+        <i className="fa fa-search" aria-hidden="true"></i>
         </a>
         <a href='#'>
-        <i class="fa fa-clock-o" aria-hidden="true"></i>
+        <i className="fa fa-clock-o" aria-hidden="true"></i>
         </a>
         <a href='#'>
             <img src="" alt="" />

@@ -3,6 +3,7 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 import './App.css'
+import './main.scss'
 import Cart from './component/Cart'
 import MainPage from './component/dashboard/MainPage'
 import Admin from './component/dashboard/NestedPages/Admin'
@@ -22,10 +23,10 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/" exact element={<Home />} />
         <Route path="/register" exact element={<Register />} />
-        <Route path='dashboard' element={<MainPage />}>
-            <Route path="admin" element={<Admin />} />
-            <Route path="pManagement" element={<ProductManagement />} />
-            <Route path="oManagement" element={<OrderManagement />} />
+        <Route path="dashboard" element={<MainPage />}>
+          <Route path="admin" element={<Admin />} />
+          <Route path="pManagement" element={<ProductManagement />} />
+          <Route path="oManagement" element={<OrderManagement />} />
         </Route>
         <Route path="/login" exact element={<Login />} />
         <Route path="*" element={<Notfound />} />

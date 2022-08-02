@@ -9,15 +9,15 @@ const Login = () => {
   const [password, setPassword] = useState('')
   const location = useLocation()
   const navigate = useNavigate()
-  const auth = useSelector(state=>state.auth)
+  const auth = useSelector((state) => state.auth)
   const dispatch = useDispatch()
   function validateForm() {
     return email.length > 0 && password.length > 0
   }
   function handlerSubmit(event) {
     event.preventDefault()
-   dispatch(loginUser({email:email,password:password}))
-   navigate('/dashboard')
+    dispatch(loginUser({ email: email, password: password }))
+    navigate('/dashboard')
   }
   return (
     <div className="login-form">
@@ -62,18 +62,22 @@ const Login = () => {
         >
           Login
         </Button>
-        {auth.loginStatus === 'rejected' ? <p 
-        style={{  
-          backgroundColor:'#EB1D36',
-          borderRadius:'5px',
-          paddingTop:'5px',
-          paddingBottom:'5px',
-          marginTop:'5px',
-          paddingLeft:'4px',
-          paddingRight:'4px',
-          color:'#E2DCC8',
-        }}
-      >{auth.loginError}</p> : null}
+        {auth.loginStatus === 'rejected' ? (
+          <p
+            style={{
+              backgroundColor: '#EB1D36',
+              borderRadius: '5px',
+              paddingTop: '5px',
+              paddingBottom: '5px',
+              marginTop: '5px',
+              paddingLeft: '4px',
+              paddingRight: '4px',
+              color: '#E2DCC8',
+            }}
+          >
+            {auth.loginError}
+          </p>
+        ) : null}
       </Form>
       <span
         style={{
@@ -84,6 +88,7 @@ const Login = () => {
           width: '300px',
           textAlign: 'center',
         }}
+        className='login-to-register'
       >
         Don't have Account?
         <Link style={{ paddingLeft: '7px' }} to="/register">

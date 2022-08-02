@@ -1,8 +1,8 @@
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Link, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
-import { logoutUser } from '../features/authSlice';
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { Link, useNavigate } from 'react-router-dom'
+import { toast } from 'react-toastify'
+import { logoutUser } from '../features/authSlice'
 const Navbar = () => {
   const cart = useSelector((state) => state.cart)
   const auth = useSelector((state) => state.auth)
@@ -14,20 +14,31 @@ const Navbar = () => {
   //  }
   // }, [navigate,auth.token]);
 
-  const logoutHandler=()=>{
+  const logoutHandler = () => {
     dispatch(logoutUser(null))
-    toast.warning('Logged out successfully',{
-      position:'top-right'
+    toast.warning('Logged out successfully', {
+      position: 'top-right',
     })
     navigate('/login')
-   }
- 
+  }
+
   return (
     <nav className="nav-bar">
       <Link to="/">
         <h2>Shop Line</h2>
       </Link>
       <div className="right-corner flex-gap">
+        <form class="d-flex">
+          <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+          />
+          <button class="btn btn-outline-success" type="submit">
+            Search
+          </button>
+        </form>
         <Link to="/cart">
           <div className="nav-bag">
             <svg
@@ -45,17 +56,18 @@ const Navbar = () => {
             </span>
           </div>
         </Link>
-        {
-          auth.token  ? <Link to='/dashboard'>Dashboard</Link> :''
-        }
-        
-        {
-          auth.token ?
-         
-          <button onClick={()=>logoutHandler()}> <i className="fa fa-sign-out" aria-hidden="true"></i>Logout</button>  :
-         <Link to="/register"><i className="fa fa-user-plus" aria-hidden="true"></i>Register</Link>
-          
-        }
+        {auth.token ? <Link to="/dashboard">Dashboard</Link> : ''}
+
+        {auth.token ? (
+          <button onClick={() => logoutHandler()}>
+            {' '}
+            <i className="fa fa-sign-out" aria-hidden="true"></i>Logout
+          </button>
+        ) : (
+          <Link to="/register">
+            <i className="fa fa-user-plus" aria-hidden="true"></i>Register
+          </Link>
+        )}
       </div>
     </nav>
   )

@@ -1,0 +1,21 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.sub-row {
+  padding-top: 0;
+}
+.row > one {
+  position: absolute;
+  top: 0px;
+}
+.message {
+  padding: 0 40% 3% 40%;
+}
+.input-group {
+  height: 70px;
+}
+.input-group-append {
+  display: flex;
+}

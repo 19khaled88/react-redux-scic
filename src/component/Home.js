@@ -49,14 +49,17 @@ const Home = () => {
               {data?.map((product) => (
                 <div key={product.id} className="product">
                   {/*<h3>{product.name}</h3>*/}
-                  <img
-                    style={{ width: '100%', height: '210px' }}
-                    src={product.image}
-                    alt={product.name}
-                  />
+                  <img src={product.image} alt={product.name} />
+                  <p style={{ textAlign: 'center', marginBottom: '1px' }}>
+                    {product.name}
+                  </p>
                   <div className="details">
                     <span>price: ${product.price}</span>
+                    <span>Stock: 20</span>
                   </div>
+                  <p style={{ fontSize: '13px', marginBottom: '2px' }}>
+                    Description:{product.description}
+                  </p>
                   <button onClick={() => handleAddToCart(product)}>
                     Add to Cart
                   </button>

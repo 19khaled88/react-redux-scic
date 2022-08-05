@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
+import '../css/cart.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 import {
@@ -8,9 +9,11 @@ import {
   increaseCartItemNumbers,
   removeCartItem,
 } from '../features/cartSlice'
+
 const Cart = () => {
   const cart = useSelector((state) => state.cart)
   const auth = useSelector((state) => state.auth)
+  const [size, setSize] = useState([0, 0])
   const navigate = useNavigate()
   const dispatch = useDispatch()
   useEffect(() => {
@@ -26,13 +29,21 @@ const Cart = () => {
   const increaseHandler = (cartItem) => {
     dispatch(increaseCartItemNumbers(cartItem))
   }
-  const clearCarthandle = () => {
+  const clearCartHandler = () => {
     dispatch(clearCart())
   }
   const checkoutSuccess = () => {}
   const checkoutLogin = () => {
     navigate('/login')
   }
+  useLayoutEffect(() => {
+    function updateSize() {
+      setSize([window.innerWidth, window.innerHeight])
+    }
+    window.addEventListener('resize', updateSize)
+    updateSize()
+    return () => window.removeEventListener('resize', updateSize)
+  }, [])
   return (
     <div className="cart-container">
       <h2>Shopping Cart</h2>
@@ -60,7 +71,7 @@ const Cart = () => {
         </div>
       ) : (
         <div className="has-cart">
-          <div>
+          <div className="items-in-cart">
             <div className="titles">
               <h3 className="product-title">Product</h3>
               <h3 className="price">Price</h3>
@@ -79,12 +90,12 @@ const Cart = () => {
                       />
                       <div>
                         <h3>{cartItem.name}</h3>
-                        <button
+                        {/* <button
                           className="removeButton"
                           onClick={() => removeCartItemHandler(cartItem)}
                         >
                           Remove
-                        </button>
+                        </button> */}
                       </div>
                     </div>
                     <div className="cart-product-price">${cartItem.price}</div>
@@ -99,6 +110,22 @@ const Cart = () => {
                     </div>
                     <div className="cart-product-total-price">
                       ${cartItem.price * cartItem.cartQuantity}
+                    </div>
+                    <div className="rmBtn">
+                      {size[0] <= 714 ? (
+                        <i
+                          onClick={() => removeCartItemHandler(cartItem)}
+                          className="fa fa-close"
+                          style={{ fontSize: '25px', color: 'red' }}
+                        ></i>
+                      ) : (
+                        <button
+                          className="removeButton"
+                          onClick={() => removeCartItemHandler(cartItem)}
+                        >
+                          Remove
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -141,7 +168,7 @@ const Cart = () => {
                 </Link>
               </div>
             </div>
-            <button onClick={() => clearCarthandle()} className="clear-cart">
+            <button onClick={() => clearCartHandler()} className="clear-cart">
               Clear Cart
             </button>
           </div>

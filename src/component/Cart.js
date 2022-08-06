@@ -1,16 +1,26 @@
-import React, { useEffect, useLayoutEffect, useState } from 'react'
-import '../css/cart.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { Link, useNavigate } from 'react-router-dom'
+import React, { useEffect, useLayoutEffect, useState } from 'react';
+// import Button from 'react-bootstrap/Button';
+// import Form from 'react-bootstrap/Form';
+// import Modal from 'react-bootstrap/Modal';
+import {
+  Elements
+} from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
+import '../css/cart.css';
 import {
   cartItemValueTotal,
   clearCart,
   decreaseCartItemNumbers,
   increaseCartItemNumbers,
-  removeCartItem,
-} from '../features/cartSlice'
-
+  removeCartItem
+} from '../features/cartSlice';
+// import CheckoutForm from './CheckoutForm';
+import PayButton from './Paybtn';
+const stripePromise = loadStripe('pk_test_8YjljN3WdgKzW5b1vZPMLtW0');
 const Cart = () => {
+  const [show, setShow] = useState(false);
   const cart = useSelector((state) => state.cart)
   const auth = useSelector((state) => state.auth)
   const [size, setSize] = useState([0, 0])
@@ -19,6 +29,9 @@ const Cart = () => {
   useEffect(() => {
     dispatch(cartItemValueTotal())
   }, [cart])
+ 
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   const removeCartItemHandler = (cartItem) => {
     dispatch(removeCartItem(cartItem))
@@ -32,7 +45,10 @@ const Cart = () => {
   const clearCartHandler = () => {
     dispatch(clearCart())
   }
-  const checkoutSuccess = () => {}
+  const checkoutSuccess = () => {
+    handleShow()
+  
+  }
   const checkoutLogin = () => {
     navigate('/login')
   }
@@ -45,6 +61,7 @@ const Cart = () => {
     return () => window.removeEventListener('resize', updateSize)
   }, [])
   return (
+    <Elements stripe={stripePromise}>
     <div className="cart-container">
       <h2>Shopping Cart</h2>
       {cart.cartItems.length === 0 ? (
@@ -140,7 +157,11 @@ const Cart = () => {
               </div>
               <p>Taxes and shipping calculated at checkout</p>
               {auth._id ? (
-                <button onClick={() => checkoutSuccess()}>Check out</button>
+                <>
+               { /*<button onClick={() => checkoutSuccess()}>Check out</button>*/}
+                <PayButton cartItems={cart.cartItems} />
+                {/*<CheckoutForm />*/}
+                </>
               ) : (
                 <button
                   className="checkoutLogin"
@@ -174,8 +195,44 @@ const Cart = () => {
           </div>
         </div>
       )}
+     {/* <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+        <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <Form>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Email address</Form.Label>
+        <Form.Control
+            type="email"
+            placeholder="name@example.com"
+            autoFocus
+        />
+        </Form.Group>
+        <Form.Group
+        className="mb-3"
+        controlId="exampleForm.ControlTextarea1"
+        >
+        <Form.Label>Example textarea</Form.Label>
+        <Form.Control as="textarea" rows={3} />
+        </Form.Group>
+        </Form>
+        </Modal.Body>
+        <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+            Close
+        </Button>
+        <Button variant="primary" onClick={handleClose}>
+            Save Changes
+        </Button>
+        </Modal.Footer>
+      </Modal> */ }         
+
     </div>
+    </Elements>
   )
+
+    
 }
 
 export default Cart

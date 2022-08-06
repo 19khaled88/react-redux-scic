@@ -3,8 +3,8 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 import './App.css'
-import './main.scss'
 import Cart from './component/Cart'
+import CheckoutSuccess from './component/CheckoutSuccess'
 import MainPage from './component/dashboard/MainPage'
 import Admin from './component/dashboard/NestedPages/Admin'
 import OrderManagement from './component/dashboard/NestedPages/OrderManagement'
@@ -14,6 +14,7 @@ import Login from './component/Login'
 import Navbar from './component/Navbar'
 import Notfound from './component/Notfound'
 import Register from './component/Register'
+import './main.scss'
 function App() {
   return (
     <BrowserRouter>
@@ -21,6 +22,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout-success" element={<CheckoutSuccess />} />
         <Route path="/" exact element={<Home />} />
         <Route path="/register" exact element={<Register />} />
         <Route path="dashboard" element={<MainPage />}>

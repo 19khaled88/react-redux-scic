@@ -19,203 +19,203 @@ const LatestItem = () => {
           <img src={latest1} alt={latest1} />
           <p>Name</p>
           <div className="star-rating ">
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
           </div>
           <h6> $20000</h6>
           <div className="cart-love">
             <span>Add to cart</span>
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i className="fa fa-heart-o" aria-hidden="true"></i>
           </div>
         </div>
         <div className="grid-item ">
           <img src={latest2} alt={latest1} />
           <p>Name</p>
           <div className="star-rating ">
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
           </div>
           <h6> $20000</h6>
           <div className="cart-love">
             <span>Add to cart</span>
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i className="fa fa-heart-o" aria-hidden="true"></i>
           </div>
         </div>
         <div className="grid-item ">
           <img src={latest3} alt={latest1} />
           <p>Name</p>
           <div className="star-rating ">
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
           </div>
           <h6> $20000</h6>
           <div className="cart-love">
             <span>Add to cart</span>
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i className="fa fa-heart-o" aria-hidden="true"></i>
           </div>
         </div>
         <div className="grid-item ">
           <img src={latest4} alt={latest1} />
           <p>Name</p>
           <div className="star-rating ">
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
           </div>
           <h6> $20000</h6>
           <div className="cart-love">
             <span>Add to cart</span>
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i className="fa fa-heart-o" aria-hidden="true"></i>
           </div>
         </div>
         <div className="grid-item ">
           <img src={latest5} alt={latest1} />
           <p>Name</p>
           <div className="star-rating ">
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
           </div>
           <h6> $20000</h6>
           <div className="cart-love">
             <span>Add to cart</span>
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i className="fa fa-heart-o" aria-hidden="true"></i>
           </div>
         </div>
         <div className="grid-item ">
           <img src={latest6} alt={latest1} />
           <p>Name</p>
           <div className="star-rating ">
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
           </div>
           <h6> $20000</h6>
           <div className="cart-love">
             <span>Add to cart</span>
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i className="fa fa-heart-o" aria-hidden="true"></i>
           </div>
         </div>
         <div className="grid-item">
           <img src={latest7} alt={latest1} />
           <p>Name</p>
           <div className="star-rating ">
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
           </div>
           <h6> $20000</h6>
           <div className="cart-love">
             <span>Add to cart</span>
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i className="fa fa-heart-o" aria-hidden="true"></i>
           </div>
         </div>
         <div className="grid-item ">
           <img src={latest8} alt={latest1} />
           <p>Name</p>
           <div className="star-rating ">
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
           </div>
           <h6> $20000</h6>
           <div className="cart-love">
             <span>Add to cart</span>
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i className="fa fa-heart-o" aria-hidden="true"></i>
           </div>
         </div>
         <div className="grid-item ">
           <img src={latest9} alt={latest1} />
           <p>Name</p>
           <div className="star-rating ">
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
           </div>
           <h6> $20000</h6>
           <div className="cart-love">
             <span>Add to cart</span>
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i className="fa fa-heart-o" aria-hidden="true"></i>
           </div>
         </div>
         <div className="grid-item ">
           <img src={latest10} alt={latest1} />
           <p>Name</p>
           <div className="star-rating ">
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
-            <i class="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
+            <i className="fa fa-star-o checked" aria-hidden="true"></i>
           </div>
           <h6> $20000</h6>
           <div className="cart-love">
             <span>Add to cart</span>
-            <i class="fa fa-heart-o" aria-hidden="true"></i>
+            <i className="fa fa-heart-o" aria-hidden="true"></i>
           </div>
         </div>
       </div>
-      {/* <div class="section group">
-        <div class="col span_1_of_3">
+      {/* <div className="section group">
+        <div className="col span_1_of_3">
           <img src={latest8} alt={latest1} />
         </div>
-        <div class="col span_1_of_3">
+        <div className="col span_1_of_3">
           <img src={latest8} alt={latest1} />
         </div>
-        <div class="col span_1_of_3">
+        <div className="col span_1_of_3">
           <img src={latest8} alt={latest1} />
         </div>
-        <div class="col span_1_of_3">
+        <div className="col span_1_of_3">
           <img src={latest8} alt={latest1} />
         </div>
-        <div class="col span_1_of_3">
+        <div className="col span_1_of_3">
           <img src={latest8} alt={latest1} />
         </div>
       </div> */}
-      {/* <div class="wrapper">
-        <div class="one">
+      {/* <div className="wrapper">
+        <div className="one">
           <img src={latest8} alt={latest1} />
         </div>
-        <div class="two">
+        <div className="two">
           <img src={latest8} alt={latest1} />
         </div>
-        <div class="three">
+        <div className="three">
           <img src={latest8} alt={latest1} />
         </div>
-        <div class="four">
+        <div className="four">
           <img src={latest8} alt={latest1} />
         </div>
-        <div class="five">
+        <div className="five">
           <img src={latest8} alt={latest1} />
         </div>
-        <div class="six">
+        <div className="six">
           <img src={latest8} alt={latest1} />
         </div>
-        <div class="seven">
+        <div className="seven">
           <img src={latest8} alt={latest1} />
         </div>
-        <div class="eight">
+        <div className="eight">
           <img src={latest8} alt={latest1} />
         </div>
       </div> */}

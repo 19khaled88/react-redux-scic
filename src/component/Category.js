@@ -82,7 +82,7 @@ const Category = () => {
                   <div className="buy-details">
                     <a href="#" className="view-all-btn">
                       Details
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i className="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     <button>Buy</button>
                   </div>
@@ -99,7 +99,7 @@ const Category = () => {
                   <div className="buy-details">
                     <a href="#" className="view-all-btn">
                       Details
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i className="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     <button>Buy</button>
                   </div>
@@ -116,7 +116,7 @@ const Category = () => {
                   <div className="buy-details">
                     <a href="#" className="view-all-btn">
                       Details
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i className="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     <button>Buy</button>
                   </div>
@@ -133,25 +133,7 @@ const Category = () => {
                   <div className="buy-details">
                     <a href="#" className="view-all-btn">
                       Details
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                    </a>
-                    <button>Buy</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            {' '}
-            <div className="">
-              <div className="card border-0 shadow-sm">
-                <div className="card-body">
-                  <img src={opp01} alt={opp01} />
-                  <h4>Oppo</h4>
-                  <div className="buy-details">
-                    <a href="#" className="view-all-btn">
-                      Details
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i className="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     <button>Buy</button>
                   </div>
@@ -169,24 +151,7 @@ const Category = () => {
                   <div className="buy-details">
                     <a href="#" className="view-all-btn">
                       Details
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                    </a>
-                    <button>Buy</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="">
-              <div className="card border-0 shadow-sm">
-                <div className="card-body">
-                  <img src={opp01} alt={opp01} />
-                  <h4>Oppo</h4>
-                  <div className="buy-details">
-                    <a href="#" className="view-all-btn">
-                      Details
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i className="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     <button>Buy</button>
                   </div>
@@ -204,7 +169,7 @@ const Category = () => {
                   <div className="buy-details">
                     <a href="#" className="view-all-btn">
                       Details
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i className="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     <button>Buy</button>
                   </div>
@@ -221,7 +186,42 @@ const Category = () => {
                   <div className="buy-details">
                     <a href="#" className="view-all-btn">
                       Details
-                      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      <i className="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <button>Buy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            {' '}
+            <div className="">
+              <div className="card border-0 shadow-sm">
+                <div className="card-body">
+                  <img src={opp01} alt={opp01} />
+                  <h4>Oppo</h4>
+                  <div className="buy-details">
+                    <a href="#" className="view-all-btn">
+                      Details
+                      <i className="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <button>Buy</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="">
+              <div className="card border-0 shadow-sm">
+                <div className="card-body">
+                  <img src={opp01} alt={opp01} />
+                  <h4>Oppo</h4>
+                  <div className="buy-details">
+                    <a href="#" className="view-all-btn">
+                      Details
+                      <i className="fa fa-arrow-right" aria-hidden="true"></i>
                     </a>
                     <button>Buy</button>
                   </div>

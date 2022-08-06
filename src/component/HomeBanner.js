@@ -10,15 +10,15 @@ const HomeBanner = () => {
     <div>
       <div
         id="carouselExampleCaptions"
-        class="carousel slide"
+        className="carousel slide"
         data-bs-ride="false"
       >
-        <div class="carousel-indicators">
+        <div className="carousel-indicators">
           <button
             type="button"
             data-bs-target="#carouselExampleCaptions"
             data-bs-slide-to="0"
-            class="active"
+            className="active"
             aria-current="true"
             aria-label="Slide 1"
           ></button>
@@ -53,10 +53,10 @@ const HomeBanner = () => {
             aria-label="Slide 6"
           ></button>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src={slider10} class="d-block w-100" alt="..." />
-            <div class="carousel-caption">
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img src={slider10} className="d-block w-100" alt="..." />
+            <div className="carousel-caption">
               <h5
                 className="animated bounceInRight"
                 style={{ animationDelay: '1s' }}
@@ -71,9 +71,9 @@ const HomeBanner = () => {
               </p>
             </div>
           </div>
-          <div class="carousel-item">
-            <img src={slider11} class="d-block w-100" alt="..." />
-            <div class="carousel-caption">
+          <div className="carousel-item">
+            <img src={slider11} className="d-block w-100" alt="..." />
+            <div className="carousel-caption">
               <h5
                 className="animated bounceInRight"
                 style={{ animationDelay: '1s' }}
@@ -88,9 +88,9 @@ const HomeBanner = () => {
               </p>
             </div>
           </div>
-          <div class="carousel-item">
-            <img src={slider12} class="d-block w-100" alt="..." />
-            <div class="carousel-caption">
+          <div className="carousel-item">
+            <img src={slider12} className="d-block w-100" alt="..." />
+            <div className="carousel-caption">
               <h5
                 className="animated bounceInRight"
                 style={{ animationDelay: '1s' }}
@@ -105,9 +105,9 @@ const HomeBanner = () => {
               </p>
             </div>
           </div>
-          <div class="carousel-item">
-            <img src={slider4} class="d-block w-100" alt="..." />
-            <div class="carousel-caption">
+          <div className="carousel-item">
+            <img src={slider4} className="d-block w-100" alt="..." />
+            <div className="carousel-caption">
               <h5
                 className="animated bounceInRight"
                 style={{ animationDelay: '1s' }}
@@ -122,9 +122,9 @@ const HomeBanner = () => {
               </p>
             </div>
           </div>
-          <div class="carousel-item">
-            <img src={slider6} class="d-block w-100" alt="..." />
-            <div class="carousel-caption">
+          <div className="carousel-item">
+            <img src={slider6} className="d-block w-100" alt="..." />
+            <div className="carousel-caption">
               <h5
                 className="animated bounceInRight"
                 style={{ animationDelay: '1s' }}
@@ -139,9 +139,9 @@ const HomeBanner = () => {
               </p>
             </div>
           </div>
-          <div class="carousel-item">
-            <img src={slider7} class="d-block w-100" alt="..." />
-            <div class="carousel-caption">
+          <div className="carousel-item">
+            <img src={slider7} className="d-block w-100" alt="..." />
+            <div className="carousel-caption">
               <h5
                 className="animated bounceInRight"
                 style={{ animationDelay: '1s' }}
@@ -164,22 +164,28 @@ const HomeBanner = () => {
           </div>
         </div>
         <button
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
+          className="carousel-control-next"
           type="button"
           data-bs-target="#carouselExampleCaptions"
           data-bs-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
         </button>
       </div>
     </div>

@@ -112,7 +112,7 @@ const Slider = () => {
               data-swiper-parallax="-1500"
               data-swiper-parallax-duration="600"
             >
-              Buy now <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              Buy now <i className="fa fa-arrow-right" aria-hidden="true"></i>
             </button>
           </div>
 
@@ -166,7 +166,7 @@ const Slider = () => {
               data-swiper-parallax="-1500"
               data-swiper-parallax-duration="1000"
             >
-              Click, Buy<i class="fa fa-arrow-right" aria-hidden="true"></i>
+              Click, Buy<i className="fa fa-arrow-right" aria-hidden="true"></i>
             </button>
           </div>
         </SwiperSlide>
@@ -213,7 +213,7 @@ const Slider = () => {
               data-swiper-parallax="-1500"
               data-swiper-parallax-duration="1000"
             >
-              Click, Buy<i class="fa fa-arrow-right" aria-hidden="true"></i>
+              Click, Buy<i className="fa fa-arrow-right" aria-hidden="true"></i>
             </button>
           </div>
         </SwiperSlide>
@@ -260,7 +260,7 @@ const Slider = () => {
               data-swiper-parallax="-1500"
               data-swiper-parallax-duration="1000"
             >
-              Click, Buy<i class="fa fa-arrow-right" aria-hidden="true"></i>
+              Click, Buy<i className="fa fa-arrow-right" aria-hidden="true"></i>
             </button>
           </div>
         </SwiperSlide>
@@ -307,7 +307,7 @@ const Slider = () => {
               data-swiper-parallax="-1500"
               data-swiper-parallax-duration="1000"
             >
-              Click, Buy<i class="fa fa-arrow-right" aria-hidden="true"></i>
+              Click, Buy<i className="fa fa-arrow-right" aria-hidden="true"></i>
             </button>
           </div>
         </SwiperSlide>
@@ -354,7 +354,7 @@ const Slider = () => {
               data-swiper-parallax="-1500"
               data-swiper-parallax-duration="1000"
             >
-              Click, Buy<i class="fa fa-arrow-right" aria-hidden="true"></i>
+              Click, Buy<i className="fa fa-arrow-right" aria-hidden="true"></i>
             </button>
           </div>
         </SwiperSlide>

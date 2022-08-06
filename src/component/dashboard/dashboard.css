@@ -7,8 +7,10 @@
   margin-top: 10px;
   background: rgba(117, 246, 152, 0.25);
   color: rgb(0, 128, 79);
-
   padding-left: 10px;
+}
+.dashboard-container > p > i {
+  padding-right: 5px;
 }
 
 .label {

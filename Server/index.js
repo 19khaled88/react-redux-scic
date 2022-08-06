@@ -5,6 +5,7 @@ const products = require('./products')
 const register = require('./routers/register')
 const login = require('./routers/login')
 const userList = require('./routers/userList')
+const stripeRoute = require('./routers/stripe')
 const app = express()
 const PORT = process.env.PORT || 5000
 
@@ -19,10 +20,14 @@ app.get('/products', (req, res) => {
   res.send(products)
 })
 
-app.get('/secret',async(req,res)=>{
+// Stripe route
+
+app.get('/secret', async (req, res) => {
   const intent = paymentIntent
-  res.json({client_secret:intent.client_secret})
+  res.json({ client_secret: intent.client_secret })
 })
+app.use('/api/stripe', stripeRoute)
+
 app.use('/api/userList', userList)
 // app.get('/product', (req, res) => {
 //   res.send(products)

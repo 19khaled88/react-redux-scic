@@ -1,4 +1,5 @@
-const stripe = require('stripe')(process.env.ECOMMERCE_SECRET_KEY)
+
+const stripeRout = require('../routers/stripe')
 const paymentIntent = await stripe.paymentIntents.create({
   amount: 1099,
   currency: 'eur',

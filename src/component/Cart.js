@@ -16,8 +16,8 @@ import {
   increaseCartItemNumbers,
   removeCartItem
 } from '../features/cartSlice';
-// import CheckoutForm from './CheckoutForm';
-import PayButton from './Paybtn';
+import CheckoutForm from './CheckoutForm';
+// import PayButton from './Paybtn';
 const stripePromise = loadStripe('pk_test_8YjljN3WdgKzW5b1vZPMLtW0');
 const Cart = () => {
   const [show, setShow] = useState(false);
@@ -67,7 +67,7 @@ const Cart = () => {
       {cart.cartItems.length === 0 ? (
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
-          <div className="start-shopping">
+          <div className="start-shopping px-2 rounded-2 bg-info">
             <Link to="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -82,7 +82,7 @@ const Cart = () => {
                   d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
                 />
               </svg>
-              <span>Start Shopping</span>
+              <span >Start Shopping</span>
             </Link>
           </div>
         </div>
@@ -159,8 +159,8 @@ const Cart = () => {
               {auth._id ? (
                 <>
                { /*<button onClick={() => checkoutSuccess()}>Check out</button>*/}
-                <PayButton cartItems={cart.cartItems} />
-                {/*<CheckoutForm />*/}
+                {/* <PayButton cartItems={cart.cartItems} /> */}
+                <CheckoutForm />
                 </>
               ) : (
                 <button

@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get('/', async (req, res) => {
   const user = await User.find()
-  console.log(user)
+  // console.log(user)
   if (!user) {
     return res.status(400).send('No users found')
   } else {

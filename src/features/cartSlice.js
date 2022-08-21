@@ -70,6 +70,13 @@ const cartSlice=createSlice({
             })
             localStorage.setItem('cartInfo',JSON.stringify(state.cartItems))
         },
+        orderSuccessful(state, action){
+            state.cartItems = []
+            toast.success('You Ordered Successfully',{
+                position:'top-right'
+            })
+            localStorage.setItem('cartInfo',JSON.stringify(state.cartItems))
+        },
         cartItemValueTotal(state, action){
           let{total, quantity} =  state.cartItems.reduce((cartTotal,cartItem)=>{
                 const {price, cartQuantity} = cartItem
@@ -91,5 +98,5 @@ const cartSlice=createSlice({
     }
 })
 
-export const {addToCart,removeCartItem,decreaseCartItemNumbers,increaseCartItemNumbers,clearCart,cartItemValueTotal} = cartSlice.actions
+export const {addToCart,removeCartItem,decreaseCartItemNumbers,increaseCartItemNumbers,clearCart,cartItemValueTotal,orderSuccessful} = cartSlice.actions
 export default cartSlice.reducer

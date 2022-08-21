@@ -5,6 +5,7 @@ const products = require('./products')
 const register = require('./routers/register')
 const login = require('./routers/login')
 const Stripe = require('stripe')
+const {Order} = require('./models/order')
 
 const userList = require('./routers/userList')
 const stripeRoute = require('./routers/stripe')
@@ -35,6 +36,61 @@ app.get('/checkout-session',async(req,res)=>{
   })
   res.json(session);
 })
+
+//payment 
+app.post('/payment',async(req, res)=>{
+  // console.log(req.body.cart,req.body.items,req.body.amount)
+  try {
+   const amount = req.body.amount;
+   const paymentIntent = await stripe.paymentIntents.create({
+    amount,
+    currency:'usd',
+    payment_method_types:['card'],
+    metadata:{
+      name:'value'
+    }
+   });
+   const clientSecret = paymentIntent.client_secret 
+   res.json({clientSecret, message:'Payment initiated successfully'})
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({message:'Internal server error'})
+  }
+})
+app.post('/stripe',async(req,res)=>{
+  if(req.body.type === 'payment_intent_created'){
+    console.log(`${req.body.data.object.metada.name} initiated payment`)
+  }
+  if(req.body.type === 'payment_intent_succeeded'){
+    console.log(`${req.body.data.object.metadata.name} succeeded payment`)
+  }
+})
+app.post('/paymentSuccessful',async(req,res)=>{
+  const data = req.body 
+  // console.log(data.items)
+  // console.log(data.amount)
+  // console.log(data.clientKey)
+  // console.log(data.cart)
+
+  const newOrder = new Order({
+    customerId:data.clientKey,
+    totalItems:data.items,
+    totalAmount:data.amount,
+    products:data.cart,
+    payment_status:'successful'
+  })
+  try {
+    const saveOrder = await newOrder.save()
+    console.log('order saved successfuly')
+    if(saveOrder){
+      res.status(200).json({'success':'true', message:'Order saved successfully'})
+    }
+  } catch (error) {
+    console.error(error)
+  }
+})
+
+
 app.use('/api/stripe', stripeRoute)
 app.use('/api/charges', stripeRoute)
 
